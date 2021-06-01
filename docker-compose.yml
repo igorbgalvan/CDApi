@@ -1,0 +1,40 @@
+version: "3.3"
+
+services: 
+  cd_api: 
+    image: node:14
+    container_name: cd_api
+    working_dir: /cd_api
+    ports:
+      - '2000:2000'
+    volumes:
+      - .:/cd_api
+    depends_on:
+      - cd_db
+    command: bash -c "npm install && npm run dev"
+  
+  cd_db:
+    image: postgres:12
+    container_name: cd_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - cd_db:/var/lib/postgresql/data
+  
+  cd_pgadmin:
+    image: dpage/pgadmin4
+    container_name: cd_pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_LISTEN_PORT=2001
+    ports:
+      - "2001:2001"
+
+volumes:
+  postgresql:
+  postgresql_dat: 
+  cd_db:
+
+  

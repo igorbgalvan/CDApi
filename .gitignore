@@ -1,0 +1,4 @@
+/node_modules/*
+/.env
+/.cd_db/*
+/cd_api/*
