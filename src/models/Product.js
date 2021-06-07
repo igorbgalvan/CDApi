@@ -11,7 +11,7 @@ class Product extends Model {
   }
 
   static associate(models) {
-    this.belongsToMany(models.Category, { foreignKey: "category_id", through: "product_categories", as: "categories" })
+    this.belongsToMany(models.Category, { foreignKey: "product_id", through: "product_categories", as: "categories" })
   }
 }
 module.exports = Product;

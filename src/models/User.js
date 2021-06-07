@@ -30,7 +30,7 @@ class User extends Model {
   }
 
   static generateJwt(user) {
-    return jwt.sign({ user: user.profile_id, email: user.email }, process.env.API_SALT);
+    return jwt.sign({ id: user.id }, process.env.API_SALT);
   }
 
   static associate(models) {

@@ -20,7 +20,7 @@ module.exports = (req, res, next) => {
         if (err) {
             throw new Error('Invalid token');
         }
-        req.user = decoded.user;
+        req.id = decoded.id;
         return next();
     });
 
