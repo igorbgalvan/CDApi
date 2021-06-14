@@ -23,7 +23,7 @@ sudo docker-compose up
 | GET | /user |  |  | Lista todos os usuários cadastrados |
 | POST | /user |  | {email, password} | Cadastra um novo usuário |
 | PUT | /user/id | JWT | {email, password} | Atualiza um usuário pelo id |
-| DELETE | /user/id | JWT |  | Deleta um usuário pelo id |
+| DELETE | /user | JWT |  | Deleta um usuário pelo id |
 
 ## Auth
 
