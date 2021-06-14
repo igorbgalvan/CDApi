@@ -48,15 +48,15 @@ module.exports = {
 
   async delete(req, res) {
     try {
-      const { id } = req.params;
-      const user = await User.findByPk(id);
+      const user_id = req.id;
+      const user = await User.findByPk(user_id);
 
       if (!user)
         return res.status(400).send({ error: "user not found." });
 
       await user.destroy();
 
-      return res.status(200).send({ message: "the user has been deleted.", user: user });
+      return res.status(200).send({ message: "your account has been deleted.", user: user });
     } catch (err) {
       return res.status(400).send({ error: err.message });
     }

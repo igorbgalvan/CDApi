@@ -30,7 +30,9 @@ class User extends Model {
   }
 
   static generateJwt(user) {
-    return jwt.sign({ id: user.id }, process.env.API_SALT);
+    return jwt.sign({ id: user.id }, process.env.API_SALT, {
+      expiresIn: "15m"
+    });
   }
 
   static associate(models) {

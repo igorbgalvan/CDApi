@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const User = require("../models/User");
 
 module.exports = (req, res, next) => {
   try {
@@ -23,6 +24,7 @@ module.exports = (req, res, next) => {
         req.id = decoded.id;
         return next();
     });
+    
 
   } catch (error) {
     return res.status(500).send({ message: error.message });

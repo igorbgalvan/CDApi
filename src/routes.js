@@ -51,7 +51,7 @@ routes.delete('/payment/:id', token, PaymentsController.delete);
 // Users routes
 routes.get('/users', token, UsersController.index);
 routes.post('/users', UsersController.store);
-routes.delete('/user/:id', token, UsersController.delete);
+routes.delete('/user', token, UsersController.delete);
 routes.put('/user/:id', token, UsersController.update)
 
 //Auth routes
