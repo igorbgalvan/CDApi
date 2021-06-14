@@ -31,7 +31,6 @@ sudo docker-compose up
 | ------ | ------ | ------ | ------ |
 | POST | /auth | {email, password} | Vereifica o login e fornece o token de acesso JWT |
 
-Token retornado a partir da requisição em /auth deverá ser informado no Postman, no item autorização, campo bearer token, para então conseguir fazer as requisições dos endpoints. 
 
 ## Payments
 
@@ -83,9 +82,9 @@ Token retornado a partir da requisição em /auth deverá ser informado no Postm
 | PUT | /order/id | JWT | {status} | Edita uma order específica |
 | DELETE | /order/id | JWT |  | Deleta uma order específica |
 
-# Observações
+# Regras de Negócio
 - Usuário precisa ser cadastrado para conseguir realizar login.
-- Usuário após ser cadastro precisa realizar login recebendo então o seu token JWT para poder acessar os endpoints Payment, Address, Product, Category e Order.
+- Usuário após ser cadastro precisa realizar login recebendo então o seu token JWT para poder acessar os endpoints Payment, Address, Product, Category e Order (Token retornado a partir da requisição em /auth deverá ser informado no Postman, no item autorização, campo bearer token, para então conseguir fazer as requisições dos endpoints). 
 - Usuário pode ter somente um address.
 - Usuário pode ter somente um payment method.
 - Para cadastrar um novo product pertencente à uma category é preciso ter pelo menos uma category cadastrada.
