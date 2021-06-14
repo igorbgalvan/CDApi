@@ -18,12 +18,12 @@ sudo docker-compose up
    Basta importar no Postman para usá-lo.
 ## Users
 
-| HTTP Request | Endpoint | Body | Descrição |
-| ------ | ------ | ------ | ------ |
-| GET | /user |  | Lista todos os usuários cadastrados |
-| POST | /user | {email, password} | Cadastra um novo usuário |
-| PUT | /user/id | {email, password} | Atualiza um usuário pelo id |
-| DELETE | /user/id |  | Deleta um usuário pelo id |
+| HTTP Request | Endpoint | Token | Body | Descrição |
+| ------ | ------ | ------ | ------ | ------ |
+| GET | /user |  |  | Lista todos os usuários cadastrados |
+| POST | /user |  | {email, password} | Cadastra um novo usuário |
+| PUT | /user/id | JWT | {email, password} | Atualiza um usuário pelo id |
+| DELETE | /user/id | JWT |  | Deleta um usuário pelo id |
 
 ## Auth
 
